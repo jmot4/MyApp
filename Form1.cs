@@ -17,14 +17,17 @@ namespace MyApp
         public Form1()
         {
             InitializeComponent();
-            personas.Add(new Persona(1,"Luis Mota","8717279614"));
-            personas.Add(new Persona(2, "Andres Esparza", "8717051313"));
-            personas.Add(new Persona(3, "Juan Perez", "8716754135"));
-            personas.Add(new Persona(4, "Citlalli Gonzalez", "8714321567"));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Agregar datos en tiempo de ejecución aquí para evitar que el Diseñador intente ejecutar
+            // código que manipula controles o datos durante el diseño.
+            personas.Add(new Persona(1, "Luis Mota", "8717279614"));
+            personas.Add(new Persona(2, "Andres Esparza", "8717051313"));
+            personas.Add(new Persona(3, "Juan Perez", "8716754135"));
+            personas.Add(new Persona(4, "Citlalli Gonzalez", "8714321567"));
+
             foreach (var Persona in personas)
             {
                 dgvInformacion.Rows.Add();

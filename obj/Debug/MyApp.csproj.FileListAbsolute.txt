@@ -8,4 +8,3 @@ C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.csproj.GenerateResou
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.csproj.CoreCompileInputs.cache
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.exe
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.pdb
-C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.exe.config
