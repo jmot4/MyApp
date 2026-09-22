@@ -25,3 +25,4 @@ C:\Users\Jose Luis\source\repos\MyApp\MyApp\bin\Debug\System.Threading.Tasks.Ext
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.csproj.Up2Date
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.exe
 C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.pdb
+C:\Users\Jose Luis\source\repos\MyApp\MyApp\obj\Debug\MyApp.Form2.resources
