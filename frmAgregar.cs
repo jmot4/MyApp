@@ -65,6 +65,7 @@ namespace MyApp
                 comando.Parameters.AddWithValue("@materno", txtMaterno.Text);
                 comando.Parameters.AddWithValue("@telefono", txtTelefono.Text);
                 comando.Parameters.AddWithValue("@correo", txtCorreo.Text);
+                comando.Parameters.AddWithValue("@id", id);
                 bool f = datos.ejecutar(comando);
                 if (f)
                 {

@@ -61,5 +61,16 @@ namespace MyApp
         {
             ActualizarGrid();
         }
+
+        private void dgvInformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmAgregar actualizar = new frmAgregar(dgvInformacion.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[4].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[5].Value.ToString(),
+                Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value));
+           actualizar.Show();
+        }
     }
 }
