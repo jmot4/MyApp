@@ -81,5 +81,20 @@ namespace MyApp
 
            
         }
+
+        private void frmAgregar_Load(object sender, EventArgs e)
+        {
+            datos = new Datos();
+            DataSet dsEstados;
+
+            dsEstados = datos.Informacion("Select * From Estados");
+            if(dsEstados!= null && dsEstados.Tables.Count > 0)
+            {
+                cmbEstado.DataSource = dsEstados.Tables[0];
+                cmbEstado.DisplayMember = "nombre";
+                cmbEstado.ValueMember = "id";                   
+
+
+            }
     }
 }

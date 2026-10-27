@@ -40,6 +40,7 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.cmbEstados = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -125,7 +126,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(16, 380);
+            this.btnAgregar.Location = new System.Drawing.Point(16, 468);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(131, 42);
             this.btnAgregar.TabIndex = 10;
@@ -135,18 +136,27 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(182, 380);
+            this.btnCerrar.Location = new System.Drawing.Point(182, 468);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(131, 42);
             this.btnCerrar.TabIndex = 11;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
+            // cmbEstados
+            // 
+            this.cmbEstados.FormattingEnabled = true;
+            this.cmbEstados.Location = new System.Drawing.Point(16, 381);
+            this.cmbEstados.Name = "cmbEstados";
+            this.cmbEstados.Size = new System.Drawing.Size(230, 28);
+            this.cmbEstados.TabIndex = 12;
+            // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 462);
+            this.ClientSize = new System.Drawing.Size(327, 521);
+            this.Controls.Add(this.cmbEstados);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtCorreo);
@@ -161,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAgregar";
             this.Text = "Agregar";
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +191,6 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ComboBox cmbEstados;
     }
 }
