@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MyApp
 {
-  
+
     public partial class frmAgregar : Form
     {
         bool updateMode = false;
@@ -20,10 +20,11 @@ namespace MyApp
         public frmAgregar()
         {
             InitializeComponent();
+           
         }
 
         public frmAgregar(string nombre, string paterno, string materno,
-            string telefono, string correo,int id)
+            string telefono, string correo, int id)
         {
             InitializeComponent();
             txtNombre.Text = nombre;
@@ -31,9 +32,10 @@ namespace MyApp
             txtMaterno.Text = materno;
             txtTelefono.Text = telefono;
             txtCorreo.Text = correo;
-            btnAgregar.Text = "Actualiza";    
+            btnAgregar.Text = "Actualiza";
             updateMode = true;
             this.id = id;
+          
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace MyApp
             }
             else
             {
-                SqlCommand comando= new SqlCommand("Update Datos Set nombre=@nombre," +
+                SqlCommand comando = new SqlCommand("Update Datos Set nombre=@nombre," +
                     "paterno=@paterno,materno=@materno,telefono=@telefono," +
                     "correo=@correo Where id=@id");
                 comando.Parameters.AddWithValue("@nombre", txtNombre.Text);
@@ -79,7 +81,7 @@ namespace MyApp
             }
 
 
-           
+
         }
 
         private void frmAgregar_Load(object sender, EventArgs e)
@@ -88,13 +90,41 @@ namespace MyApp
             DataSet dsEstados;
 
             dsEstados = datos.Informacion("Select * From Estados");
-            if(dsEstados!= null && dsEstados.Tables.Count > 0)
+            if (dsEstados != null && dsEstados.Tables.Count > 0)
             {
-                cmbEstado.DataSource = dsEstados.Tables[0];
-                cmbEstado.DisplayMember = "nombre";
-                cmbEstado.ValueMember = "id";                   
+                cmbEstados.DataSource = dsEstados.Tables[0];
+                cmbEstados.DisplayMember = "Estado";
+                cmbEstados.ValueMember = "idEstado";
 
+                CambiosMunicipio(Convert.ToInt32(cmbEstados.SelectedIndex));
 
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbEstados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            CambiosMunicipio(Convert.ToInt32(cmbEstados.SelectedIndex+1));
+          
+        }
+
+        private void CambiosMunicipio(int idEstado)
+        {
+            DataSet dsMunicipios;
+            dsMunicipios = datos.Informacion("Select * " +
+                    "From Municipios Where idEstado="
+                    + idEstado);
+            if (dsMunicipios != null && dsMunicipios.Tables.Count > 0)
+            {
+                cmbMunicipios.DataSource = dsMunicipios.Tables[0];
+                cmbMunicipios.DisplayMember = "Municipio";
+                cmbMunicipios.ValueMember = "idMunicipio";
+            }
+        }
     }
 }

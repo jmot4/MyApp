@@ -41,6 +41,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.cmbEstados = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbMunicipios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -126,7 +129,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(16, 468);
+            this.btnAgregar.Location = new System.Drawing.Point(18, 522);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(131, 42);
             this.btnAgregar.TabIndex = 10;
@@ -136,26 +139,57 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(182, 468);
+            this.btnCerrar.Location = new System.Drawing.Point(184, 522);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(131, 42);
             this.btnCerrar.TabIndex = 11;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // cmbEstados
             // 
             this.cmbEstados.FormattingEnabled = true;
             this.cmbEstados.Location = new System.Drawing.Point(16, 381);
             this.cmbEstados.Name = "cmbEstados";
-            this.cmbEstados.Size = new System.Drawing.Size(230, 28);
+            this.cmbEstados.Size = new System.Drawing.Size(297, 28);
             this.cmbEstados.TabIndex = 12;
+            this.cmbEstados.SelectedIndexChanged += new System.EventHandler(this.cmbEstados_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 358);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Estado";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 429);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Municipio";
+            // 
+            // cmbMunicipios
+            // 
+            this.cmbMunicipios.FormattingEnabled = true;
+            this.cmbMunicipios.Location = new System.Drawing.Point(11, 452);
+            this.cmbMunicipios.Name = "cmbMunicipios";
+            this.cmbMunicipios.Size = new System.Drawing.Size(297, 28);
+            this.cmbMunicipios.TabIndex = 14;
             // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 521);
+            this.ClientSize = new System.Drawing.Size(327, 591);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbMunicipios);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbEstados);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregar);
@@ -192,5 +226,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.ComboBox cmbEstados;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbMunicipios;
     }
 }

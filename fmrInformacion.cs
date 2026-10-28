@@ -72,5 +72,10 @@ namespace MyApp
                 Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value));
            actualizar.Show();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
