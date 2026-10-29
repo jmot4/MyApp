@@ -22,7 +22,7 @@ namespace MyApp
         private void ActualizarGrid()
         {
             datos = new Datos();
-            DataSet ds = datos.Informacion("Select * from Datos");
+            DataSet ds = datos.Informacion("Select id,nombre,paterno,materno,telefono,correo,Estado,Municipio from Datos Inner Join Estados On Datos.idEstado = Estados.idEstado Inner Join Municipios On Datos.idMunicipio=Municipios.idMunicipio");
 
             if (ds != null)
             {               
@@ -34,6 +34,9 @@ namespace MyApp
                 dgvInformacion.Columns[3].DataPropertyName = "materno";
                 dgvInformacion.Columns[4].DataPropertyName = "telefono";
                 dgvInformacion.Columns[5].DataPropertyName = "correo";
+                dgvInformacion.Columns[6].DataPropertyName = "Estado";
+                dgvInformacion.Columns[7].DataPropertyName = "Municipio";
+
 
                 dgvInformacion.DataSource = ds.Tables[0];
 
@@ -77,5 +80,7 @@ namespace MyApp
         {
             this.Close();
         }
+
+        
     }
 }

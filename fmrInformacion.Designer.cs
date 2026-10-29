@@ -30,14 +30,16 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvInformacion = new System.Windows.Forms.DataGridView();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,7 +62,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnInsertar);
             this.splitContainer1.Panel2.Controls.Add(this.btnSalir);
-            this.splitContainer1.Size = new System.Drawing.Size(1481, 450);
+           
+            this.splitContainer1.Size = new System.Drawing.Size(1762, 450);
             this.splitContainer1.SplitterDistance = 348;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -73,15 +76,37 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column7,
+            this.Column8});
             this.dgvInformacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInformacion.Location = new System.Drawing.Point(0, 0);
             this.dgvInformacion.Name = "dgvInformacion";
             this.dgvInformacion.RowHeadersWidth = 62;
             this.dgvInformacion.RowTemplate.Height = 28;
-            this.dgvInformacion.Size = new System.Drawing.Size(1481, 348);
+            this.dgvInformacion.Size = new System.Drawing.Size(1762, 348);
             this.dgvInformacion.TabIndex = 0;
             this.dgvInformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacion_CellContentClick);
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Location = new System.Drawing.Point(724, 30);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(133, 39);
+            this.btnInsertar.TabIndex = 1;
+            this.btnInsertar.Text = "Agregar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(875, 30);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(133, 39);
+            this.btnSalir.TabIndex = 0;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Column1
             // 
@@ -125,31 +150,25 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 300;
             // 
-            // btnInsertar
+            // Column7
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(492, 34);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(133, 39);
-            this.btnInsertar.TabIndex = 1;
-            this.btnInsertar.Text = "Agregar";
-            this.btnInsertar.UseVisualStyleBackColor = true;
-            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            this.Column7.HeaderText = "Estado";
+            this.Column7.MinimumWidth = 8;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 150;
             // 
-            // btnSalir
+            // Column8
             // 
-            this.btnSalir.Location = new System.Drawing.Point(643, 34);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(133, 39);
-            this.btnSalir.TabIndex = 0;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.Column8.HeaderText = "Municipio";
+            this.Column8.MinimumWidth = 8;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 150;
             // 
             // fmrInformacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1481, 450);
+            this.ClientSize = new System.Drawing.Size(1762, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "fmrInformacion";
             this.Text = "Informacion";
@@ -176,5 +195,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
