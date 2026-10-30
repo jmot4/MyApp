@@ -14,7 +14,7 @@ namespace MyApp
 
     public partial class frmAgregar : Form
     {
-        bool updateMode = false;
+        bool updateMode = false,inicio=false;
         int id;
         Datos datos;
         public frmAgregar()
@@ -24,7 +24,7 @@ namespace MyApp
         }
 
         public frmAgregar(string nombre, string paterno, string materno,
-            string telefono, string correo, int id)
+            string telefono, string correo, int id, string estado, string municipio)
         {
             InitializeComponent();
             txtNombre.Text = nombre;
@@ -32,10 +32,13 @@ namespace MyApp
             txtMaterno.Text = materno;
             txtTelefono.Text = telefono;
             txtCorreo.Text = correo;
+           
             btnAgregar.Text = "Actualiza";
             updateMode = true;
             this.id = id;
-          
+            cargaInformacionCombo();
+            cmbEstados.Text = estado;
+            cmbMunicipios.Text = municipio;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -43,10 +46,14 @@ namespace MyApp
             datos = new Datos();
             if (updateMode == false)
             {
-                bool f = datos.ejecutar("Insert Into Datos(nombre,paterno,materno," +
-                "telefono,correo)Values('"
+                bool f = 
+                    
+                    datos.ejecutar("Insert Into Datos(nombre,paterno,materno," +
+                "telefono,correo,idEstado,idMunicipio)Values('"
                 + txtNombre.Text + "','" + txtPaterno.Text + "','" + txtMaterno.Text
-                + "','" + txtTelefono.Text + "','" + txtCorreo.Text + "')");
+                + "','" + txtTelefono.Text + "','" + txtCorreo.Text + "'," 
+                + cmbEstados.SelectedValue 
+                + "," +cmbMunicipios.SelectedValue +")");
                 if (f)
                 {
                     MessageBox.Show("Registro agregado correctamente");
@@ -84,7 +91,7 @@ namespace MyApp
 
         }
 
-        private void frmAgregar_Load(object sender, EventArgs e)
+        private void cargaInformacionCombo() 
         {
             datos = new Datos();
             DataSet dsEstados;
@@ -94,12 +101,13 @@ namespace MyApp
             {
                 cmbEstados.DataSource = dsEstados.Tables[0];
                 cmbEstados.DisplayMember = "Estado";
-                cmbEstados.ValueMember = "idEstado";
-
-                CambiosMunicipio(Convert.ToInt32(cmbEstados.SelectedIndex));
+                cmbEstados.ValueMember = "idEstado";              
 
             }
+            CambiosMunicipio(Convert.ToInt32(cmbEstados.SelectedIndex));
+            inicio = true;
         }
+      
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -108,7 +116,7 @@ namespace MyApp
 
         private void cmbEstados_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+           if(inicio)
             CambiosMunicipio(Convert.ToInt32(cmbEstados.SelectedIndex+1));
           
         }

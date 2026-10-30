@@ -72,8 +72,10 @@ namespace MyApp
                 dgvInformacion.Rows[e.RowIndex].Cells[3].Value.ToString(),
                 dgvInformacion.Rows[e.RowIndex].Cells[4].Value.ToString(),
                 dgvInformacion.Rows[e.RowIndex].Cells[5].Value.ToString(),
-                Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value));
-           actualizar.Show();
+                Convert.ToInt32(dgvInformacion.Rows[e.RowIndex].Cells[0].Value),
+                dgvInformacion.Rows[e.RowIndex].Cells[6].Value.ToString(),
+                dgvInformacion.Rows[e.RowIndex].Cells[7].Value.ToString());
+            actualizar.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

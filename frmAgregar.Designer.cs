@@ -205,7 +205,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAgregar";
             this.Text = "Agregar";
-            this.Load += new System.EventHandler(this.frmAgregar_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
